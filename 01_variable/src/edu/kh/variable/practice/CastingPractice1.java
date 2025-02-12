@@ -48,9 +48,12 @@ public class CastingPractice1 {
 		// -> 저장 방식 : 52비트(가수) + 11비트(지수) + 1비트 (부호) 
 		
 		System.out.println("'"+ ch + "'" ); // 'A'
-		System.out.println( ch ); // 65
-		System.out.println( ch iNum1 ); // 75
-		System.out.println( (ch iNum1) ); // 'K'
+		
+		System.out.println( (int)ch ); // 65
+		
+		System.out.println( ch + iNum1 ); // 75
+		
+		System.out.println( "'" + (char)(ch + iNum1) + "'" ); // 'K'
 
 	}
 
