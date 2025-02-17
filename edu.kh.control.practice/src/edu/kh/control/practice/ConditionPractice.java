@@ -37,7 +37,7 @@ public class ConditionPractice {
 		}
 			System.out.println(result);
 	}		
-	}
+	
 
 	public void pr2() {
 		/*국어, 영어, 수학 세 과목의 
@@ -77,7 +77,7 @@ public class ConditionPractice {
 		double avg = sum / 3.0; // 평균
 		String result; // 결과 저장용 변수 선언
 		
-		if(kor >= 40 && math >= 40 && eng >= 40 && avg >= 60	
+		if(kor >= 40 && math >= 40 && eng >= 40 && avg >= 60);	
 		} else  {// 불합격
 			System.out.println("");
 		}
@@ -127,24 +127,25 @@ BMI 지수 : 21.45087235996327
 		 * */
 		
 		System.out.println("키(m)를 입력해 주세요 : ");
-		double height = sc.nextDouble()
+		double height = sc.nextDouble();
 				
 		System.out.println("몸무게(kg)를 입력해 주세요 : ");
-		double weight = sc.nextDouble()
+		double weight = sc.nextDouble();
 		// BMI = 몸무게 / (키(M) * (키(M) )
-		double bmi = weight / (height * height)
+		double bmi = weight / (height * height);
 		System.out.println("BMI 지수 : " + bmi);		
 				
 		String result;
 		
 		if (bmi < 18.5) {
-			result = "저체중"
+			result = "저체중";
 		} else if (bmi < 23) {
-			result = "정상체중"
+			result = "정상체중";
 		}
 				
-		System.out.println(result);		
-				
+		System.out.println("result");	
+			
+	}
 		public void pr5() {
 			
 			/*[실행 화면 1]
