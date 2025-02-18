@@ -3,6 +3,8 @@ package edu.kh.array.practice.service;
 import java.util.Arrays;
 import java.util.Scanner;
 
+
+
 public class PracticeService {
 
 	/*
@@ -366,8 +368,6 @@ public class PracticeService {
 			}
 			
 			
-	
-		public void practice14(){
 			/*
 			 * 사용자가 입력한 배열의 길이만큼의 
 			 * 문자열 배열을 선언 및 할당하고
@@ -379,6 +379,70 @@ public class PracticeService {
 			사용자가 더 이상 입력하지 않겠다고 하면 
 			배열 전체 값을 출력하세요.
 			 * */
+		public void practice14(){
+			
+			
+			// 1. 첫 배열 크기 지정
+			System.out.println("배열의 크기를 입력하세요 : ");
+			int size = sc.nextInt();
+			sc.nextLine(); // 입력 버퍼에 남은 개행문자 제거
+			
+			String[] arr = new String[size];
+			
+			// 2. 첫 배열에 저장할 문자열 입력받기
+			for (int i =0; i < arr.length; i++) {
+			System.out.print((i+1) + "번째 문자열 : ");
+			arr[i] = sc.nextLine();
+			}
+			
+			// 3. 반복이 시작되는 구간 부터 while 작성하여 내부에 종료조건 만들어서 break;
+			while(true) {
+				System.out.println("더 값을 입력하시겠습니끼?(y/n) : ");
+				char ch = sc.next().charAt(0);
+				
+			// 4. 값을 더 입력할 경우
+			if(ch == 'y' || ch == 'Y') {
+				
+				// 5. 더 입력받을 개수 입력 받기
+				System.out.println("더 입력하고 싶은 개수");
+				int addSize = sc.nextInt();
+				sc.nextLine(); // 입력버퍼에 남은 개행문자 제거
+				
+				// 6. 새로 값을 입력 받을 배열 생성 --> 기존 배열 크기 + 추가 입력 개수
+				String[] newArr = new String[arr.length + addSize];
+				
+				// 7. 배열 복사 + 새로운 문자열 입력 받기
+				for (int i = 0; i < newArr.length; i++) {
+					
+					if(i < arr.length) // 인덱스의 크기가 기존 배열보다 작을경우 (깊은 복사)
+						// 인덱스의 크기가 기존 배열 보다 클 경우 (새로운 값 입력 받기)
+						newArr[i] = arr[i];// 기존 배열 요소 값 복사
+				}else {
+					System.out.println((i+1) + "번째 문자열 : ");
+					newArr[i] = sc.nextLine();
+				}
+				
+				// 8. 기존 배열 공간을 참조하던 변수 arr에 새로운 배열 공간의 주소 newArr 대입 (얕은 복사)
+				// 더 입력?  y
+				// 위코드를 반복할때 기존 배열인 arr 의 길이를 기준으로
+				// 새 배열(newArr)의 크기를 할당하기 
+				arr =newArr;
+			
+				
+			} else if (ch == 'n' || ch == 'N') { // 값을 더 입력하지 않을 경우
+				break; // while 반복문 종료
+				
+			}else { // 잘못 입력한 경우
+			System.out.println();
+			}
+			// 값을 더 입력하지 않을 경우
+			// 잘못 입력한 경우
+				
+				
+				
+				
+				
+			}
 		int[] arr = new int[3];
 		
 		arr[0] = 1;
