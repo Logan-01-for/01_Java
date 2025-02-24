@@ -7,6 +7,10 @@ public class SnackMenu {
 	
 	private Scanner sc = new Scanner(System.in);
 	
+	public void displayMenu() {
+		
+		}
+	}
 	
 	String kind = "빵";
 	String name = "케이크";
