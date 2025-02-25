@@ -1,4 +1,4 @@
-package com.hw1.model.vo.Employee
+package com.hw1.model.vo.Employee;
 
 public class Employee {
 
@@ -122,7 +122,10 @@ public class Employee {
 		this.address = address;
 	}
 	public String information() {
-		return "";// null
+		return empNo +", ", empName +", ",dept +", ",
+				job +", ",age +", ",gender +", "
+						+ ""salary +", "bonusPoint +""
+								+ phone + ", adress;// null
 	}
 	
 }
