@@ -1,7 +1,5 @@
 package com.hw2.run.Run;
 
-import com.hw2.model.dto.Prisoner;
-
 public class Run {
 
 	public static void main(String[] args) {
@@ -10,10 +8,10 @@ public class Run {
 	// Company의 생성자를 이용하여 10칸짜리 Employee 객체 
 	//배열 생성하는  Company 객체를 생성하여 ManagementSystem 자료형의 company에 주소를 저장
 	
-	String Employee[] = new String[10];
+	ManagementSystem company = new Company(10);
 	
 	// Prison의 생성자를 이용하여 10칸 짜리 Prisoner 객체 배열 생성생성하는 Prison 객체를 생성하여 ManagementSystem 자료형의 prison에 주소를 저장
-	String Prisoner[] = new Prisoner[10];
+	ManagementSystem = new Prisoner[10];
 	
 	// 2명 정도 직원 새로 등록하기
 	// 등록되 전체 직원 조회

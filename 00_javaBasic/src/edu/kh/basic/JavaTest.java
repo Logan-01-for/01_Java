@@ -23,7 +23,7 @@ public class JavaTest {
 	// main 작성하고 ctrl+ space-> 자동완성 기능
 	// main 메서드 : 자바 애플리케이션 (프로그램)을 실행하기 위해서
 	// 				반드시 필요한 구문
-	public static void main (string[] args) {
+	public static void main (String[] args) {
 		//	실행 단축키 : ctrl + f11
 		System.out.println("Hello world!");
 		System.out.println("저녁 뭐 먹을까");
@@ -44,14 +44,14 @@ public class JavaTest {
 		// "" 안에 작성된 코드는 단순 문자열로 인식
 		// "" 안에 작성된지 않은 코드는 숫자, 변수로 인식
 		
-		System.out.println(50 23);
+		System.out.println(50 -23);
 		System.out.println(12 * 13);
 		System.out.println(327 / 3);
 		System.out.println(12 % 2); // 0
 		
 		// "" (문자열) + 숫자 함께 작성
 		System.out.println("14 * 19 =" + 266);
-		System.out.println("14 * 19 = " + 14 * 19);"
+		System.out.println("14 * 19 = " + 14 * 19);
 				
 		System.out.println("90 + 70 + 65 =" + (90 + 70 + 65));
 		// 자바는 사칙연산의 우선 순위를 그대로 따른다

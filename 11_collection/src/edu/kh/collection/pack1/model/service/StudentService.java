@@ -34,10 +34,10 @@ public class StudentService {
 		studentList.add(new Student("박주희", 24, "서울시 서대문구", 'F', 70));
 	}
 	
-	
+	/*
 	private List<Object> testList = new ArrayList<Object>();
 	
-	/*
+	
 	public void ex() { // List 테스트용 예제
 		
 		// List.add(Object e) : 리스트에 객체를 추가
@@ -105,8 +105,8 @@ public class StudentService {
 				switch(menuNum) {
 				case 1: System.out.println(addStudent() ); break;
 				case 2: selectAll(); break;
-				case 3: System.out.println(updateStudent() ); break;
-				case 4: System.out.println(removeStudent() ); break;
+				case 3: System.out.println( updateStudent() ); break;
+				case 4: System.out.println( removeStudent() ); break;
 				case 5: /*searchName1();*/ break;
 				case 6: /*searchName2();*/ break;
 				case 7: /*sortByAge();*/ break;
@@ -319,7 +319,7 @@ public class StudentService {
 				if(studentList.isEmpty()) {
 					return "입력된 학생정보가 없습니다";
 					
-				//2)
+				//2) 입력된 숫자가 0보다 작은지
 				} else if(index < 0) {
 					return "음수는 입력할 수 없습니다";
 				
@@ -328,7 +328,7 @@ public class StudentService {
 					return "범위를 넘어선 값을 입력할 수 없습니다.";
 		
 		// 4) 삭제
-			System.out.print("정말 삭제 하시겠습니까? (Y/N): ");
+			System.out.print("정말 삭제 하시겠습니까? (Y/N) : ");
 			char ch = sc.next().toUpperCase().charAt(0);
 			// "y" -> "Y" -> 'Y'
 			
@@ -337,8 +337,9 @@ public class StudentService {
 				return temp.getName() + "의 정보가 제거되었습니다";
 				
 			}
-		return "취소";
+		
 	}
+				return "취소";
 	}
 }
 	
