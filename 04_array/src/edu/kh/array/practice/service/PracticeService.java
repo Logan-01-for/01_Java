@@ -16,6 +16,8 @@ public class PracticeService {
 	 * */
 	public void practice1(){
 		
+		Scanner sc = new Scanner(System.in);
+		
 		int[] arr = {1,2,3,4,5,6,7,8,9}; // 원본
 		int[] copyArr1 = new int[arr.length];
 		
@@ -123,7 +125,7 @@ public class PracticeService {
 	public void practice5(){
 		// 1. 사용자에게 문자열 입력 받기
 		System.out.println("문자열 :");
-		String str = sc.nextLine();
+		
 		
 		// 2. 사용자가 입력한 문자열을 하나하나 char 배열에 넣기
 		// -> 사용자가 입력한 문자열의 길이만큼의 char 배열을 할당
@@ -141,7 +143,7 @@ public class PracticeService {
 		// 문자열에서 동일한 문자가 발견 될 때마다 1씩 증가
 		
 		// 반복문 수행 전 문자열 출력
-		System.out.println(str = "에" + ch + );
+		System.out.println(str = "에" + ch + "가 존재하는 위치(인덱스) :");
 		
 		// arr 배열의 인덱스마다 접근하기 위해 반복문 사용
 		for(int i = 0; i < arr.length; i++) {
@@ -155,16 +157,6 @@ public class PracticeService {
 	System.out.println(ch + "개수 :" + count);
 	}
 
-		
-		variable char = "i";
-		String str = "application";
-		
-		int[] arr = new int[2];
-		int [] arr1 = {4, 8};
-		System.out.println("arr :" + Arrays.toString(arr1));
-		
-		
-	}
 	public void practice6(){
 		
 		/*
@@ -217,7 +209,7 @@ public class PracticeService {
 			다시 정수를 받도록 하세요.
 		 * */
 		
-		for(int i = 0; i< .length; i++) {
+		for(int i = 0; i < arr.length; i++) {
 		}
 	
 		}
