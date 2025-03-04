@@ -22,7 +22,7 @@ public class Friend {
 	@Override
 	public String toString() {
 		
-		return "Friend [ name=" + name +", pickLeader=" + pickLeader + score[ "="]"";
+		return "Friend [ name=" + name +", pickLeader=" + pickLeader + score[ "="];
 	}
 	
 	}
