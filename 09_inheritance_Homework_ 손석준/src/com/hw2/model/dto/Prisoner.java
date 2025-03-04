@@ -17,8 +17,9 @@ public abstract class Prisoner extends Person {
 		this.crime = crime;
 	}
 	@Override
-	public String toString() {
-		return crime + " / ";
+	public String getInfo() {
+		return String.format("ID : %s, 이름 : %s , 죄목 : %s", id, name, crime);
+		// id와 name을 Person에서 protected로 만들었기 때문에
+		// 후손클래스에서 직접 접근 가능!
 	}
-	abstract String getInfo();
 }

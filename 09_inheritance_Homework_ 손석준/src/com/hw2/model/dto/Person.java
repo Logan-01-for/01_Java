@@ -1,12 +1,10 @@
 package com.hw2.model.dto;
 
 public abstract class Person {
-
-	private String id;
-	private String name;
 	
-	public Person() {}
-
+	protected String id; // 고유번호
+	protected String name; // 이름
+	
 	public Person(String id, String name) {
 		super();
 		this.id = id;
@@ -28,9 +26,17 @@ public abstract class Person {
 	public void setName(String name) {
 		this.name = name;
 	}
-	@Override
-	public String toString() {
-		return id + " / "+ name;
-	}
-	abstract  String getInfo();
+	
+	public abstract String getInfo(); 
+	// Person 정보를 문자열로 리턴
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

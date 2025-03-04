@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.hw3.model.dto.Book;
 import com.hw4.model.dto.Music;
 
 public class MusicService {
@@ -19,16 +18,18 @@ public class MusicService {
 	
 	public MusicService() { // 기본 생성자
 
-		library.add(new Music("Bad Habits", "Ed sheeran", 1001, "British", 2010);
-		library.add(new Music("Like me", "MGee", 1002, "Us", 2022);
-		library.add(new Music("Can't feel my self", "dadanny", 1003, "Us", 2023);
-		library.add(new Music("MaliciousIntentions", "Pozer", 1004, "Us", 2020);
-		library.add(new Music("Static", "Tom Adams", 1005, "Us", 2021);
+		library.add(new Music("Bad Habits", "Ed sheeran", 2010, 1001, "British"));
+		library.add(new Music("Like me", "MGee", 2022, 1002, "Us"));
+		library.add(new Music("Can't feel myself", "dadanny", 2023, 1003, "Us"));
+		library.add(new Music("MaliciousIntentions", "Pozer", 2020, 1004, "Us"));
+		library.add(new Music("Static", "Tom Adams", 2021, 1005, "Us"));
 	}
 	public void displayMenu() { // 메뉴
 		
 		try {
+			
 			int menuNum = 0;
+			do {
 			System.out.println("\n===음악 목록 프로그램 =====");
 			System.out.println("1. 음악 등록");
 			System.out.println("2. 음악 조회");
@@ -51,7 +52,6 @@ public class MusicService {
 				showMusicList(library); break;
 			case 3 : 
 				System.out.println(editMusic()); break;
-			
 			case 4 : 
 				System.out.println(deleteMusic()); break;
 			/*
@@ -75,22 +75,22 @@ public class MusicService {
 		System.out.println("예외 발생");
 		e.printStackTrace(); // 예외 추적
 	}
-	}			
-
+			
+	}
 	// 음악 등록 메서드
 public String addMusic() {
 	
 	System.out.println("===음악 등록===");
 	
 	System.out.print(" 음악 번호 : ");
-	int MusicNum = sc.nextInt();
+	int musicNum = sc.nextInt();
 	sc.nextLine(); // 입력버퍼에 남은 개행 문자 제거용
 	
 	System.out.print("음악 제목 : ");
 	String title = sc.nextLine();
 	
 	System.out.print(" 음악 작사 : ");
-	String writer = sc.nextLine();
+	String artist = sc.nextLine();
 	
 	System.out.print(" 음악 가격 : ");
 	int price = sc.nextInt();
@@ -99,8 +99,9 @@ public String addMusic() {
 	System.out.print(" 음악 발매사 : ");
 	String publisher = sc.nextLine();
 
-	Music newMusic = new Music(title, artist, price, MusicNum);
-
+	Music newMusic = new Music(title, artist, price, musicNum, publisher);
+	
+			
 library.add(newMusic);
 
 return "등록 완료";
@@ -123,7 +124,7 @@ public void showMusicList(List<Music> list) {
 
 //도서 수정용 메서드
 
-	public String editBook() {
+	public String editMusic() {
 		
 		showMusicList(library); // 등록된 도서를 출력하기
 		
@@ -137,10 +138,10 @@ public void showMusicList(List<Music> list) {
 		boolean flag = true;
 		
 		
-		for(Book temp : library) {
+		for(Music temp : library) {
 			
 		
-			if(temp.getBookNum() == MusicNum) {
+			if(temp.getMusicNum() == MusicNum) {
 				// 입력한 도서 번호와 도서 목록의 도서 번호가 일치하는걸 찾았을때
 			
 			flag = false;// 작동하지 않음
@@ -167,8 +168,72 @@ public void showMusicList(List<Music> list) {
 				System.out.println("===음악 작사가 수정 ===");
 				System.out.println("수정할 작사가를 입력하세요");
 				String artist = sc.nextLine();
-				temp.setWriter(artist);
+				temp.setArtist(artist);
 				break;
 				
+			case 4 :
+				System.out.println("===음악 출판사 수정===");
+				System.out.println("수정할 출판사를 입력하세요 : ");
+				String publisher = sc.nextLine();
+				temp.setPublischer(publisher);
+				break;
+				
+			case 0: System.out.println("종료합니다..."); break;
+			default : System.out.println("메뉴에 있는 번호만 선택하세요");
+				
 			}
+			}
+		}
+		if (flag) {
+			return "일치하는 음악 번호가 없습니다";
+		}
+			return "수정 완료";
+	}
+	
+	// 음악 삭제용 메서드
+	public String deleteMusic() {
+		System.out.println("====음악 삭제====");
+		
+		showMusicList(library);// 컬렉션에서 책의 목록을 출력하는 역할
+		
+		System.out.println("삭제할 음악의 번호를 입력하세요 : ");
+		int deleteNum = sc.nextInt(); // 숫자를 입력 받아 삭제 번호로 사용
+		
+		for(Music temp : library) {
 			
+			if (temp.getMusicNum() == deleteNum) {
+				int index = library.indexOf(temp);
+				// List에 일치하는 객체가 있으면 그 객체가 있는 index번호 반환
+				
+				System.out.println("index 번호 : + index"); // 문자열 연결
+				
+				System.out.println("정말 삭제하시겠습니까? (Y/N) : ");
+				
+				char answer = sc.next().toUpperCase().charAt(0); 
+				
+				if (answer == 'Y') {
+					library.remove(index);
+					break;
+				} else {
+					return "삭제를 진행하지 않습니다";
+				}
+			}
+			return "삭제 끝";
+		}
+	}
+		
+		// 추천 음악 뽑기
+		
+		public void randomMusic() {
+			
+		int max = library.size(); 
+		
+		int random = (int)(Math.random() * max);
+		
+		System.out.println(library.get(random).getTitle());
+			
+			
+			
+						}
+		}
+	
