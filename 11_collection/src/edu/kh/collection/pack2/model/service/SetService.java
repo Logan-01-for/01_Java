@@ -218,17 +218,18 @@ public class SetService {
 		//		0~9 범위 내 정수 반환
 		
 		// Ramdom 객체 생성
-		Random ramdom = new Random();
+		Random random = new Random();
 		
 		// lotto에 저장된 값이 6개 미만이면 반복
 		// == 6개 멈춤
 		while(lotto.size() < 6) {
 			
 			// 1 ~ 45 범위 난수 발생
-			lotto.add(random.nextInt(45) +1);
+			lotto.add( random.nextInt(45) +1);
 		}
 		
 		System.out.println( lotto );
+	}
 		
 		/**
 		 * <h1>로또 번호 생성기<\h1>
