@@ -29,7 +29,7 @@ public class ByteService {
 	
 	// IO 관련된 코드 IOException이 발생될 가능성이 높다!
 	// -> IO 관련 코드는 거의 모든 메서드가 throws IOException
-	// -> IOException 예외 처리 구문을 작성하는 거싱 필수!
+	// -> IOException 예외 처리 구문을 작성하는 것이 필수!
 	
 	/**
 	 * 바이트 기반 스트림을 이용한 파일 출력
@@ -42,7 +42,7 @@ public class ByteService {
 		
 		try {
 			
-			// new FileOutpurStream("경로") :
+			// new FileOutputStream("경로") :
 			// -> 경로에 작성된 파일과 연결된 파일 출력 스트림 객체 생성
 			// -> 출력 스트림에 연결된 파일이 존재하지 않으면 자동 생성
 			// 단, 폴더는 생성되지 않음
