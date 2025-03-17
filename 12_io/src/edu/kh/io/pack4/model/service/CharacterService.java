@@ -46,7 +46,7 @@ public class CharacterService {
 				// -> 개행 문자가 나올때까지의 문자열을 읽음.
 				line = br.readLine();
 				
-				if(line == null) { // 더이상 일ㄷ어올 내용이 없을 때
+				if(line == null) { // 더이상 읽어올 내용이 없을 때
 					break; // 반복 종료
 				}
 				
