@@ -314,7 +314,7 @@ public class ByteService {
 		
 			fis = new FileInputStream("\\io_test\\20250305\\노래가사.txt");
 			
-			// 보조 스티림 생성
+			// 보조 스트림 생성
 			bis = new BufferedInputStream(fis);
 			
 			byte[] bytes = bis.readAllBytes();
